@@ -11,10 +11,6 @@ public class Main {
 
             try {
 
-                // now i changed from master to main Default repo.......
-
-
-
                 System.out.println("\n");
 
                 // Prints out the menu options.
@@ -168,10 +164,9 @@ public class Main {
 
                 //this is the catch if an input is incorrect in this scenario it's for letters input. this will also break the loop and exit the program, program restart needs to occur.
             } catch (InputMismatchException e) {
-                input.nextLine();
                 System.out.println("wrong input try again!");
                 System.out.println("------------------------------------");
-
+                input.nextLine();
             }
         }
 

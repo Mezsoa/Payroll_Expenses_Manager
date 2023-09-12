@@ -18,7 +18,7 @@ public class Main {
                         "Type 1 press Enter for Option (1)\n" +
                         "Type 2 press Enter for Option (2)\n" +
                         "Type 3 press Enter for Option (3)\n" +
-                        "Type 0 or any letter press Enter to exit the program");
+                        "Type 0 press Enter to exit the program");
 
                 System.out.println("-------------------------------------");
 
@@ -83,7 +83,7 @@ public class Main {
                     double typeInput = accountBalance - input1; //tracks my account balance after i add the invoice
 
                     //array list to be able to add the values in to the array.
-                    ArrayList<Double> myAccountBalance = new ArrayList<Double>();
+                    ArrayList<Double> myAccountBalance = new ArrayList<>();
                     myAccountBalance.add(accountBalance);
                     myAccountBalance.add(input1);
                     myAccountBalance.add(typeInput);
@@ -164,10 +164,10 @@ public class Main {
 
                 //this is the catch if an input is incorrect in this scenario it's for letters input. this will also break the loop and exit the program, program restart needs to occur.
             } catch (InputMismatchException e) {
-                System.out.println("You have exited the program");
+                input.nextLine();
+                System.out.println("wrong input try again!");
                 System.out.println("------------------------------------");
-                System.out.println("If you want to restart the program press (Ctrl + Shift + F10)");
-                break;
+
             }
         }
 

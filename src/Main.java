@@ -4,9 +4,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
 
-        //(while) loop with a try-catch to be able to return to option menu/also to catch up invalid input (letters)..
+        //while loop with a try-catch to be able to return to option menu/also to catch up invalid input.
         while (true) {
 
             try {
@@ -28,7 +28,7 @@ public class Main {
                         "Option 3: Pay one or more invoices.");
 
                 // Gives option  a scanner input/ so the user can create input.
-                int option = input.nextInt();
+                int option = scan.nextInt();
 
 
 
@@ -38,7 +38,7 @@ public class Main {
                     System.out.println("Please type in the amount of employees that you wanna pay (integers only) press Enter.");
 
                     // Creates a new  int input / for amount of employees typed in.
-                    int employee = input.nextInt();
+                    int employee = scan.nextInt();
 
                     // Creates an array that stores Double values, Storage are equivalent to (int employee).
                     double[] storage = new double[employee];
@@ -49,7 +49,7 @@ public class Main {
                         System.out.println("Now type in the paycheck amount below for employee (" + (i + 1) + ") press Enter: ");
 
                         // Storing the result of employee paycheck input for each employee minus the tax of 30%
-                        storage[i] = input.nextInt() * 0.70;
+                        storage[i] = scan.nextInt() * 0.70;
                     }
 
                     System.out.println("Displayed below are each employees salary after 30% tax\n");
@@ -66,7 +66,7 @@ public class Main {
 
 
                 }
-                // If input is equal 2 then it jumps to second statement and runs this block of code
+                // If input is equal 2 then the first if is false and jumps to second statement and runs this block of code
                 else if (option == 2)
 
                 {
@@ -76,7 +76,7 @@ public class Main {
 
                     // Variables & values for the bank account array where i will store the info.
                     double vat = 1.25;                  // the vat amount (25%).
-                    double input1 = input.nextDouble(); // new double input so that we don't make 2 inputs.
+                    double input1 = scan.nextDouble(); // new double input so that we don't make 2 inputs.
                     double noVat = input1 / vat;        // Divides input1  with 1.25
                     double vatCost = input1 - noVat;    //taking input minus result(input1 divided with 1.25) to get the VAT price.
                     double accountBalance = 100000;     //balance in Kr
@@ -113,7 +113,7 @@ public class Main {
                     System.out.println("-------------------------------------");
 
                     // Variables & values for a new array to store info in.
-                    double invoices = input.nextInt();      // Amount of invoices to pay
+                    double invoices = scan.nextInt();      // Amount of invoices to pay
                     double accountBalance = 150000;         // Amount of money the user have inside there account.
                     double totalInvoiceValue = 0.0;         // The initial storage value inside the array
                     double[] invoiceStorage = new double[(int) invoices]; // Stores invoice amount inside invoiceStorage array.
@@ -124,7 +124,7 @@ public class Main {
                         System.out.println("Please type in the invoice amount for invoice(" + (i + 1) + ") press Enter");
                         System.out.println("---------------------------------");
 
-                        invoiceStorage[i] = input.nextInt(); //Stores the value of input that are controlled by [i] inside the array  of invoiceStorage.
+                        invoiceStorage[i] = scan.nextInt(); //Stores the value of input that are controlled by [i] inside the array  of invoiceStorage.
 
                     }
 
@@ -162,11 +162,11 @@ public class Main {
                     System.out.println("\n");
                 }
 
-                //this is the catch if an input is incorrect in this scenario it's for letters input. this will also break the loop and exit the program, program restart needs to occur.
+                //this is the catch if an input is incorrect in this scenario it's for everything except 1,2,3  & 0 .
             } catch (InputMismatchException e) {
                 System.out.println("wrong input try again!");
                 System.out.println("------------------------------------");
-                input.nextLine();
+                scan.nextLine();
             }
         }
 

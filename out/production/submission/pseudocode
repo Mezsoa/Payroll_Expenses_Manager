@@ -1,0 +1,35 @@
+Pseudocode
+This program will calculate how many employees to pay and how much salary they will have after tax. It will create
+new invoices and calculates the price of invoices to pay.
+
+Display: Greet user and inform the user about the choice of options.
+Int option = scan.nextInt()
+INPUT: select option.
+While (true)
+
+IF option equals 1.
+    PRINT: ask User to type amount of employees to pay.
+    INPUT: Quantity of employees.
+    SET: User input minus tax of 30% and store the amount for each employee in an double array storage
+    PRINT: salary for each employee until correct amount of employees are reached from previous user input
+    PRINT: Return to option menu
+Else IF User input equals 2
+    PRINT: type in total amount of new invoice
+    INPUT: total amount
+    SET: noVat = input / 1.25
+    SET: vatCost = input – noVat
+    PRINT: “total invoice amount” + input
+    PRINT: “VAT amount for invoice” + vatCost
+    PRINT “invoice amount excluding VAT” + noVAT
+    PRINT: Return to option menu
+Else IF User input equals 3
+    PRINT: type in invoices to pay
+    INPUT: Quantity of invoices to pay
+    READ: store each invoice in an array
+    PRINT: Type in the invoice amount for each invoice of total invoices to pay
+    INPUT: Invoice amount
+    SET: totalAmount = invoice amount + invoiceArray
+    SET: accountBalance = accountBalance – totalAmount
+Else input equals 0
+    Print: "exit the program"
+

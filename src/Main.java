@@ -9,7 +9,7 @@ public class Main {
         //while loop with a try-catch to be able to return to option menu/also to catch up invalid input.
         while (true) {
             try {
-                // Prints out the menu options.
+                // welcomes and informs the user on what to do.
                 System.out.println("Hey there!\nYou have four options to choose from:\n" +
                         "Type 1 press Enter for Option (1)\n" +
                         "Type 2 press Enter for Option (2)\n" +
@@ -142,21 +142,17 @@ public class Main {
                         System.out.println("Here is your account balance after paid invoices: (" + accountBalance + ")Kr");
                         System.out.println("--------Return to option menu--------");
                     }
-                    // If input is equal 0 we will willingly break the loop and the exit, program restart needs to occur.
+                    // If input is equal 0 we will willingly break the loop and exit. Program restart needs to occur.
                 } else if (option == 0) {
                     System.out.println("You have exited the program");
                     System.out.println("------------------------------------");
                     System.out.println("If you want to restart the program press: (Ctrl + Shift + F10)");
                     break;
-
-                    // number input not 1-3 or 0 then the loops repeat to give user another try to input correct option integer.
-                } else {
+                } else { // number input not equal to 1-3 or 0 then the loops repeat to give user another try to input correct option integer.
                     System.out.println("------------------------------------");
                     System.out.println("Invalid number input!\nPlease try again!");
                     System.out.println("------------------------------------");
-                    System.out.println("\n");
                 }
-
                 //this is the catch if an input is incorrect in this scenario it's for everything except 1,2,3  & 0.
             } catch (InputMismatchException e) {
                 System.out.println("wrong input try again!");
@@ -164,6 +160,5 @@ public class Main {
                 scan.nextLine();
             }
         }
-
     }
 }

@@ -8,20 +8,14 @@ public class Main {
 
         //while loop with a try-catch to be able to return to option menu/also to catch up invalid input.
         while (true) {
-
             try {
-
-                System.out.println("\n");
-
                 // Prints out the menu options.
                 System.out.println("Hey there!\nYou have four options to choose from:\n" +
                         "Type 1 press Enter for Option (1)\n" +
                         "Type 2 press Enter for Option (2)\n" +
                         "Type 3 press Enter for Option (3)\n" +
                         "Type 0 press Enter to exit the program");
-
                 System.out.println("-------------------------------------");
-
                 // Prints out the menu options
                 System.out.println("Option 1: Pay salaries to employees.\n" +
                         "Option 2: Create a new invoice.\n" +
@@ -29,9 +23,6 @@ public class Main {
 
                 // Gives option  a scanner input/ so the user can create input.
                 int option = scan.nextInt();
-
-
-
                 // If input is equal to 1 then the first if statement are true and continues.
                 if (option == 1)
                 {
@@ -79,7 +70,7 @@ public class Main {
                     double input1 = scan.nextDouble(); // new double input so that we don't make 2 inputs.
                     double noVat = input1 / vat;        // Divides input1  with 1.25
                     double vatCost = input1 - noVat;    //taking input minus result(input1 divided with 1.25) to get the VAT price.
-                    double accountBalance = 100000;     //balance in Kr
+                    double accountBalance = 500000;     //balance in Kr
                     double typeInput = accountBalance - input1; //tracks my account balance after i add the invoice
 
                     //array list to be able to add the values in to the array.
@@ -88,19 +79,18 @@ public class Main {
                     myAccountBalance.add(input1);
                     myAccountBalance.add(typeInput);
 
-                    //created a lot of separate println due to that i want different text in all of them.
-                    System.out.println("-------------------------------------");
-                    System.out.println("Initial bank account balance: " + accountBalance + "Kr");
-                    System.out.println("Invoice balance: " + input1 + "Kr");
-                    System.out.println("Account balance after invoice: " + typeInput + "Kr");
-
-                    System.out.println("-------------------------------------");
-
-                    System.out.println("The total invoice amount: " + input1 + "Kr\n");
-                    System.out.println("The VAT amount for your invoice: " + vatCost + "Kr\n");
-                    System.out.println("The invoice amount excluding VAT: " + noVat + "Kr\n");
-                    System.out.println("--------Return to option menu--------");
-
+                    // Creating if statement to try again if  amount exceeds the account balance
+                    if (typeInput <= -0) {
+                        System.out.println(typeInput + " Kr." + " Insufficient balance on your account! please try again with lower amount");
+                        System.out.println("------------------------------------");
+                        scan.nextLine();
+                    } else {
+                        System.out.println("-------------------------------------");
+                        System.out.println("The total invoice amount: " + input1 + "Kr\n");
+                        System.out.println("The VAT amount for your invoice: " + vatCost + "Kr\n");
+                        System.out.println("The invoice amount excluding VAT: " + noVat + "Kr\n");
+                        System.out.println("--------Return to option menu--------");
+                    }
 
 
                 }
@@ -128,10 +118,6 @@ public class Main {
 
                     }
 
-                    System.out.println("\n");
-                    System.out.println("Displayed below are total invoice amount and your total account balance after the invoices are paid");
-                    System.out.println("-------------------------------------");
-
                     //(i) is equal to 0 and less than the length of values inside the array, it will repeat until right amount of values are reached.
                     for (int i = 0; i < invoiceStorage.length; i++) {
 
@@ -142,11 +128,20 @@ public class Main {
                     // Subtracts sum value of array with the accountBalance.
                     accountBalance -= totalInvoiceValue;
 
-                    System.out.println("Here are the total amount on your invoices: (" + totalInvoiceValue + ")Kr");
-                    System.out.println("------------------------------------");
-                    System.out.println("Here is your account balance after paid invoices: (" + accountBalance + ")Kr");
-                    System.out.println("--------Return to option menu--------");
-
+                    // Creating if statement to try again if  amount exceeds the account balance
+                    if (accountBalance <= -0) {
+                        System.out.println(accountBalance + " Kr." + " Insufficient balance on your account! please try again with lower amount");
+                        System.out.println("------------------------------------");
+                        scan.nextLine();
+                    } else {
+                        System.out.println("\n");
+                        System.out.println("Displayed below are total invoice amount and your total account balance after the invoices are paid");
+                        System.out.println("-------------------------------------");
+                        System.out.println("Here are the total amount on your invoices: (" + totalInvoiceValue + ")Kr");
+                        System.out.println("------------------------------------");
+                        System.out.println("Here is your account balance after paid invoices: (" + accountBalance + ")Kr");
+                        System.out.println("--------Return to option menu--------");
+                    }
                     // If input is equal 0 we will willingly break the loop and the exit, program restart needs to occur.
                 } else if (option == 0) {
                     System.out.println("You have exited the program");
@@ -162,7 +157,7 @@ public class Main {
                     System.out.println("\n");
                 }
 
-                //this is the catch if an input is incorrect in this scenario it's for everything except 1,2,3  & 0 .
+                //this is the catch if an input is incorrect in this scenario it's for everything except 1,2,3  & 0.
             } catch (InputMismatchException e) {
                 System.out.println("wrong input try again!");
                 System.out.println("------------------------------------");

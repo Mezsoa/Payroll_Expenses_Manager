@@ -32,4 +32,5 @@ Else IF User input equals 3
     SET: accountBalance = accountBalance – totalAmount
 Else input equals 0
     Print: "exit the program"
+    break loop.
 

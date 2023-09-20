@@ -24,8 +24,7 @@ public class Main {
                 // Gives option  a scanner input/ so the user can create input.
                 int option = scan.nextInt();
                 // If input is equal to 1 then the first if statement are true and continues.
-                if (option == 1)
-                {
+                if (option == 1) {
                     System.out.println("Please type in the amount of employees that you wanna pay (integers only) press Enter.");
 
                     // Creates a new  int input / for amount of employees typed in.
@@ -47,21 +46,13 @@ public class Main {
 
                     // i is equal to 0 and as long as i is less than the amount of values inside the variable (storage) it will repeat itself.
                     for (int i = 0; i < storage.length; i++) {
-
                         // displays the salary for each employee after tax of 30%
                         System.out.println("salary for employee (" + (i + 1) + ") after tax: \n" + storage[i] + "kr");
-
                     }
 
                     System.out.println("--------Return to option menu--------");
 
-
-                }
-                // If input is equal 2 then the first if is false and jumps to second statement and runs this block of code
-                else if (option == 2)
-
-                {
-
+                } else if (option == 2) {// If input is equal 2 then the first if is false and jumps to second statement and runs this block of code
                     System.out.println("Please type the total amount of the new invoice (Integers only) press Enter");
                     System.out.println("-------------------------------------");
 
@@ -92,13 +83,7 @@ public class Main {
                         System.out.println("--------Return to option menu--------");
                     }
 
-
-                }
-                // If input of option is equal to 3  the program asks user to type amount of invoices.
-                else if (option == 3)
-
-                {
-
+                } else if (option == 3) { // If option is equal 3 the program asks user to type amount of invoices.
                     System.out.println("Please type in the amount of invoices that you would like to pay");
                     System.out.println("-------------------------------------");
 
